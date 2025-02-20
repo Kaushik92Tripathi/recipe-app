@@ -22,9 +22,47 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>This is a header</header>
+        <div className="min-h-screen bg-gradient-to-br from-yellow-100 to-orange-200 text-gray-800 font-sans">
+      {/* Header */}
+      <header className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 shadow-md">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <h1 className="text-3xl font-bold tracking-wide">
+            🍽️  <span className="hidden sm:block">
+              Foodie's Paradise
+              </span>
+          </h1>
+          <nav>
+            <ul className="flex space-x-6">
+              <li>
+                <a href="/" className="hover:underline">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/recipes" className="hover:underline">
+                  Recipes
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto p-8 bg-white rounded-xl shadow-lg my-6">
         {children}
-        <footer>This is a footer</footer>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-orange-500 text-white p-6 mt-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <p>
+            © {new Date().getFullYear()} Foodie's Paradise. All rights reserved.
+          </p>
+          <p className="text-sm mt-2">"Good food brings good mood!"</p>
+        </div>
+      </footer>
+    </div>
       </body>
     </html>
   );
